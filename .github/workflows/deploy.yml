@@ -1,0 +1,50 @@
+name: cd
+
+on:
+  push:
+    branches:
+      - "develop"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # checkout
+      - uses: actions/checkout@v4
+      # docker
+      - uses: docker/login-action@v2
+        with:
+          registry: harbor.kigawa.net
+          username: "robot$portfolio"
+          password: ${{ secrets.HARBOR_PASS }}
+
+      - name: BuildAndPushImageOnHarbor
+        env:
+          PORT: 80
+          SERVER_NAME: portfolio.kigawa.net
+        run: |
+          docker build -t harbor.kigawa.net/private/portfolio:${{ github.ref_name }}-${{ github.run_number }} \
+           -f Dockerfile \
+          ./ 
+          docker push harbor.kigawa.net/private/portfolio:${{ github.ref_name }}-${{ github.run_number }}
+      # argo
+      - name: checkout manifest repository
+        uses: actions/checkout@v3
+        with:
+          repository: kigawa01/k8s
+          ref: main
+          token: ${{ secrets.GIT_TOKEN }}
+
+      - name: Update YAML File
+        run: |
+          yq -i '.spec.template.spec.containers[0].image = "harbor.kigawa.net/private/portfolio:${{ github.ref_name }}-${{ github.run_number }}"' \
+          ./portfolio/portfolio.yml
+
+      - name: push
+        run: |
+          git config user.name githubActions
+          git config user.email bot@kigawa.net
+          git add .
+          git commit --author=. -m "update rev"
+          git push
