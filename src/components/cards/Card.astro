@@ -1,0 +1,16 @@
+---
+import Container from "../Container.astro";
+interface Props {
+  title: string;
+}
+
+const { title} = Astro.props;
+---
+<Container>
+  <h2>{title}</h2>
+  <slot/>
+</Container>
+
+<style>
+
+</style>

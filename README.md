@@ -1,4 +1,4 @@
-# Portfolio of kigawa
+# kigawa's portfolio
 
 ## requirements
 
