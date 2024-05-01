@@ -1,9 +1,11 @@
 ---
-const {href}: { href: string } = Astro.props
+const {title}: { title: string } = Astro.props
 ---
-<a href={href}>
-<slot/>
-</a>
+<li>
+  <a href={`#${title}`}>
+    {title}
+  </a>
+</li>
 
 <style>
   a {
@@ -14,9 +16,13 @@ const {href}: { href: string } = Astro.props
     background: var(--mcolor-primary-container);
     color: var(--mcolor-on-primary-container);
     padding: 10px;
-    &:hover{
+    text-decoration: none;
+    &:hover {
       background: var(--mcolor-secondary);
-    color: var(--mcolor-on-secondary);
+      color: var(--mcolor-on-secondary);
     }
+  }
+  li {
+    margin: 15px 0;
   }
 </style>

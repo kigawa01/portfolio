@@ -1,0 +1,38 @@
+---
+const {title}: { title: string } = Astro.props
+---
+<section id={title}>
+  <h2>{title}</h2>
+  <slot/>
+</section>
+<style>
+  section {
+    height: 800px;
+    border-radius: 5px;
+    border: 2px solid var(--mcolor-outline);
+    background-color: var(--mcolor-secondary-container);
+    width: 100%;
+    box-sizing: border-box;
+    padding: 30px;
+    &:not(:first-child) {
+      margin: 30px 0 0 0;
+    }
+  }
+  h2 {
+    max-width: 500px;
+    border-bottom: 2px solid var(--mcolor-outline);
+    position: relative;
+    margin: 0 0 0 20px;
+    padding: 0 10px;
+    &::before {
+      border-bottom: 2px solid var(--mcolor-outline);
+      position: absolute;
+      background: var(--mcolor-outline);
+      width: 6px;
+      height: 100%;
+      content: " ";
+      display: block;
+      left: -15px;
+    }
+  }
+</style>

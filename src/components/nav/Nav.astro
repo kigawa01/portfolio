@@ -1,22 +1,15 @@
 ---
-import ButtonSecondary from "./ButtonSecondary.astro";
+import ButtonSecondary from "./NavButton.astro";
+import NavButton from "./NavButton.astro";
 ---
 <div class="nav-wrapper">
   <nav>
     <h1>kigawa's portfolio</h1>
     <ul>
-      <li>
-        <ButtonSecondary>profile</ButtonSecondary>
-      </li>
-      <li>
-        <ButtonSecondary>skill</ButtonSecondary>
-      </li>
-      <li>
-        <ButtonSecondary>experience</ButtonSecondary>
-      </li>
-      <li>
-        <ButtonSecondary>products</ButtonSecondary>
-      </li>
+      <NavButton title="profile"/>
+      <NavButton title="skill"/>
+      <NavButton title="experience"/>
+      <NavButton title="products"/>
     </ul>
   </nav>
 </div>
@@ -38,8 +31,5 @@ import ButtonSecondary from "./ButtonSecondary.astro";
   }
   ul {
     font-size: 1.5rem;
-  }
-  li{
-    margin: 15px 0;
   }
 </style>
