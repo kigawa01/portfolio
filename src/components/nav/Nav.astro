@@ -1,15 +1,27 @@
 ---
 import NavButton from "./NavButton.astro";
+import LabeledItem from "../LabeledItem.astro";
 ---
 <div class="nav-wrapper">
   <nav>
-    <h1>kigawa's portfolio</h1>
+    <a href="/"><h1>kigawa's portfolio</h1></a>
     <ul>
       <NavButton title="profile"/>
       <NavButton title="skill"/>
       <NavButton title="experience"/>
       <NavButton title="products"/>
     </ul>
+    <footer>
+      <LabeledItem text="twitter">
+        <a href="https://twitter.com/kigawa20">@kigawa20</a>
+      </LabeledItem>
+      <LabeledItem text="github">
+        <a href="https://github.com/kigawa01">kigawa01</a>
+      </LabeledItem>
+      <LabeledItem text="sourcecode">
+        <a href="https://github.com/kigawa01/portfolio">https://github.com/kigawa01/portfolio</a>
+      </LabeledItem>
+    </footer>
   </nav>
 </div>
 <style>
@@ -27,9 +39,15 @@ import NavButton from "./NavButton.astro";
     border-radius: 8px;
     border: 2px solid var(--mcolor-outline);
     padding: 28px;
+    display: flex;
+    flex-direction: column;
   }
   ul {
     margin: 60px 0 0 0;
     font-size: 1.5rem;
+    flex: 1;
+  }
+  a {
+    text-decoration: underline;
   }
 </style>

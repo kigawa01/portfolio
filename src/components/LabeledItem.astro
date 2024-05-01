@@ -1,0 +1,32 @@
+---
+interface Props {
+  text: string
+}
+const {text} = Astro.props
+---
+<div class="wrapper">
+  <p>{text}</p>
+  <div>
+    <slot/>
+  </div>
+</div>
+<style>
+  div.wrapper {
+    padding: 0;
+    margin: 15px 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    p {
+      display: block;
+      font-size: 1.3rem;
+      margin: 5px 0;
+      width: 120px;
+    }
+    div {
+      padding: 0 0 0 30px;
+      margin: 5px 0;
+    }
+  }
+</style>
