@@ -1,0 +1,22 @@
+---
+const {href}: { href: string } = Astro.props
+---
+<a href={href}>
+<slot/>
+</a>
+
+<style>
+  a {
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 2px solid var(--mcolor-outline);
+    width: 100%;
+    background: var(--mcolor-primary-container);
+    color: var(--mcolor-on-primary-container);
+    padding: 10px;
+    &:hover{
+      background: var(--mcolor-secondary);
+    color: var(--mcolor-on-secondary);
+    }
+  }
+</style>
