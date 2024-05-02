@@ -1,7 +1,10 @@
 ---
 import Theme from "./Theme.astro";
+import Reset from "./Reset.astro";
 ---
 <Theme/>
+<Reset/>
+
 
 <style is:global lang="scss">
   @font-face {
@@ -27,49 +30,5 @@ import Theme from "./Theme.astro";
     @media (max-width : $smallWidth) {
       $prop : $small;
     }
-  }
-
-  body {
-    background-color : var(--mcolor-surface);
-    padding          : 0;
-    font-family      : "UDEVGothicJPDOC", sans-serif;
-    line-height      : 1.8;
-    min-height       : 100vh;
-    color            : var(--mcolor-on-surface);
-    font-size: 1.2rem;
-  }
-
-  p, div {
-    width : fit-content;
-  }
-
-  div {
-    padding : 20px;
-  }
-
-  h1 {
-    font-size : 2.3rem;
-  }
-
-  h2 {
-    font-size : 3rem;
-  }
-
-  body, h2, h1 {
-    margin : 0;
-  }
-
-  ul {
-    padding : 0;
-  }
-
-  li {
-    list-style : none;
-  }
-
-  a {
-    display         : block;
-    text-decoration : none;
-    color           : inherit;
   }
 </style>
