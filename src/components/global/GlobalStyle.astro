@@ -15,20 +15,4 @@ import Reset from "./Reset.astro";
     font-display : swap;
   }
 
-  $minWidth    : 400px;
-  $bigWidth    : 1300px;
-  $middleWidth : 800px;
-  $smallWidth  : 600px;
-  @mixin responsive($prop,$def,$big,$middle,$small) {
-    $prop : $def;
-    @media (max-width : $bigWidth) {
-      $prop : $big;
-    }
-    @media (max-width : $middleWidth) {
-      $prop : $middle;
-    }
-    @media (max-width : $smallWidth) {
-      $prop : $small;
-    }
-  }
 </style>

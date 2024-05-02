@@ -4,20 +4,34 @@ interface Props {
 }
 const {title} = Astro.props
 ---
-<div class="card">
-  <h3>{title}</h3>
-  <div>
-    <slot/>
+<div class="wrapper">
+  <div class="card">
+    <h3>{title}</h3>
+    <div>
+      <slot/>
+    </div>
   </div>
 </div>
-<style>
+<style lang="scss">
+  @import "/src/func";
+
+  .wrapper {
+    padding    : 10px;
+    box-sizing : border-box;
+    @include responsive(width, 33.3%, 50%, 100%, 100%);
+  }
+
   .card {
-    border-radius: 5px;
-    border: 2px solid var(--mcolor-outline);
-    background: var(--mcolor-surface-container-low);
+    width         : 100%;
+    box-sizing    : border-box;
+    border-radius : 5px;
+    border        : 2px solid var(--mcolor-outline);
+    background    : var(--mcolor-surface-container-low);
+    padding       : 20px 20px 20px 25px;
+
     div {
-      margin: 0 0 0 20px;
-      padding: 0;
+      margin  : 0 0 0 15px;
+      padding : 0;
     }
   }
 </style>

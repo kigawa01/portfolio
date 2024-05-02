@@ -1,0 +1,12 @@
+---
+import Card from "./Card.astro";
+interface Props {
+  desc: string
+  usingPeriod: string
+}
+const {desc, usingPeriod, ...props} = Astro.props
+---
+<Card {...props}>
+  <p>{desc}</p>
+  <p>使用年数: {usingPeriod}</p>
+</Card>

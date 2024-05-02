@@ -1,9 +1,33 @@
 ---
 import Section from "../main/Section.astro";
 import Card from "./Card.astro";
+import SkillCard from "./SkillCard.astro";
+class Month {
+  constructor(
+    public year: number,
+    public month: number
+  ) {
+  }
+}
+class Period {
+  constructor(
+    public start: Month,
+    public end: Month
+  ) {
+  }
+}
+function calcUsingPeriod(isCurrent: boolean, ...period: Period[]): string {
+  let totalMonth = 0
+  period.forEach(value => {
+    totalMonth += (value.end.year - value.start.year) * 12
+    totalMonth += value.end.month - value.start.month
+  })
+  return "約" + (Math.round((totalMonth / 12) * 10) / 10) + "年" + (isCurrent ? "(現在まで)" : "")
+}
 ---
 <Section title="skill">
   <div>
+
     <Card title="資格">
       <ul>
         <li>基本情報技術者</li>
@@ -13,10 +37,32 @@ import Card from "./Card.astro";
         <li>情報システム試験 プログラミングスキル</li>
         <li>情報システム試験 基本スキル</li>
         <li>情報システム試験 システムデザインスキル</li>
-        <li>Java SE Programmer I(Java Silver)</li>
+        <li>Java SE Programmer I (Java Silver)</li>
+        <li>英検3級</li>
         <li>少林寺拳法初段</li>
       </ul>
     </Card>
+    <SkillCard
+        title="java" usingPeriod={calcUsingPeriod(false,
+      new Period(new Month(2021, 3), new Month(2023, 10)),
+    )} desc="言語機能を利用してのライブラリ開発ができる程度"/>
+    <SkillCard
+        title="jvm" usingPeriod={calcUsingPeriod(true,
+      new Period(new Month(2020, 11), new Month(2024, 5)),
+    )} desc="GCなどチューニングができる程度"/>
+    <SkillCard
+        title="kotlin/jvm" usingPeriod={calcUsingPeriod(true,
+      new Period(new Month(2021, 11), new Month(2024, 5)),
+    )} desc="言語機能を利用してのライブラリ開発ができる程度"/>
+
+
   </div>
-  <Card title="java"></Card>
 </Section>
+<style>
+  div {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    box-sizing: border-box;
+  }
+</style>

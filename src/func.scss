@@ -1,0 +1,16 @@
+$wideWidth       : 2100px;
+$narrowWidth     : 1650px;
+$tabletWidth     : 400px;
+$smartphoneWidth : 600px;
+@mixin responsive($prop,$wide,$narrow,$tablet,$smartphone) {
+  #{$prop}: #{$smartphone};
+  @media (min-width : $smartphoneWidth) {
+    #{$prop}: #{$tablet};
+  }
+  @media (min-width : $narrowWidth) {
+    #{$prop}: #{$narrow};
+  }
+  @media (min-width : $wideWidth) {
+    #{$prop}: #{$wide};
+  }
+}
