@@ -75,7 +75,7 @@ function calcUsingPeriod(isCurrent: boolean, ...period: Period[]): string {
     <SkillCard
         title="bash" usingPeriod={calcUsingPeriod(true,
       new Period(new Month(2020, 1), new Month(2024, 5)),
-    )} desc="自動かスクリプトを作成できる程度"/>
+    )} desc="自動化スクリプトを作成できる程度"/>
     <SkillCard
         title="html/css" usingPeriod={calcUsingPeriod(true,
       new Period(new Month(2022, 1), new Month(2024, 5)),
@@ -93,13 +93,62 @@ function calcUsingPeriod(isCurrent: boolean, ...period: Period[]): string {
       new Period(new Month(2022, 10), new Month(2024, 5)),
     )} desc="基本的ばアプリケーションを実装できる程度"/>
     <SkillCard
-        title="C#" usingPeriod={calcUsingPeriod(true,
+        title="C#" usingPeriod={calcUsingPeriod(false,
       new Period(new Month(2022, 5), new Month(2022, 11)),
     )} desc="基本的ばアプリケーションを実装できる程度"/>
     <SkillCard
-        title="go" usingPeriod={calcUsingPeriod(true,
+        title="go" usingPeriod={calcUsingPeriod(false,
       new Period(new Month(2022, 3), new Month(2022, 9)),
     )} desc="基本的ばアプリケーションを実装できる程度"/>
+
+    <SkillCard
+        title="RDB" usingPeriod={calcUsingPeriod(true,
+      new Period(new Month(2020, 1), new Month(2024, 5)),
+    )} desc="設計ができる程度"/>
+    <SkillCard
+        title="MySQL/Mariadb" usingPeriod={calcUsingPeriod(true,
+      new Period(new Month(2020, 1), new Month(2024, 5)),
+    )} desc="簡単なチューニングができる程度"/>
+    <SkillCard
+        title="SQLite" usingPeriod={calcUsingPeriod(true,
+      new Period(new Month(2023, 7), new Month(2024, 3)),
+    )} desc="基本的な機能を使用できる程度"/>
+    <SkillCard
+        title="ドキュメントDB" usingPeriod={calcUsingPeriod(false,
+      new Period(new Month(2023, 1), new Month(2023, 7)),
+    )} desc="設計ができる程度"/>
+
+    <SkillCard
+        title="Docker" usingPeriod={calcUsingPeriod(true,
+      new Period(new Month(2022, 1), new Month(2024, 5)),
+    )} desc="Dockerfileを記述できる程度"/>
+    <SkillCard
+        title="kubernates" usingPeriod={calcUsingPeriod(true,
+      new Period(new Month(2022, 11), new Month(2024, 5)),
+    )} desc="継続して運用できる程度"/>
+
+    <SkillCard
+        title="nginx" usingPeriod={calcUsingPeriod(true,
+      new Period(new Month(2021, 4), new Month(2024, 5)),
+    )} desc="基本的な機能を使用できる程度"/>
+    <SkillCard
+        title="apache" usingPeriod={calcUsingPeriod(false,
+      new Period(new Month(2020, 1), new Month(2022, 1)),
+      new Period(new Month(2023, 1), new Month(2023, 7)),
+    )} desc="基本的な機能を使用できる程度"/>
+
+    <SkillCard
+        title="prometheus" usingPeriod={calcUsingPeriod(true,
+      new Period(new Month(2023, 7), new Month(2024, 5)),
+    )} desc="基本的な機能を使用できる程度"/>
+    <SkillCard
+        title="grafana" usingPeriod={calcUsingPeriod(true,
+      new Period(new Month(2023, 7), new Month(2024, 5)),
+    )} desc="基本的な機能を使用できる程度"/>
+    <SkillCard
+        title="zabbix" usingPeriod={calcUsingPeriod(false,
+      new Period(new Month(2021, 1), new Month(2023, 1)),
+    )} desc="基本的な機能を使用できる程度"/>
 
   </div>
 </Section>
