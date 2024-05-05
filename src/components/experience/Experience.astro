@@ -1,0 +1,22 @@
+---
+import Section from "../section/Section.astro";
+import ExperienceCard from "./ExperienceCard.astro";
+import {Month, Period} from "../../script/period";
+---
+<Section title="experience">
+  <ExperienceCard
+      title="今日鯖" desc="50人規模のゲームサーバーコミュニティの代表兼開発者、インフラ担当"
+      period={new Period(new Month(2020, 1), new Month(2021, 3))}
+      isCurrent={false}
+  />
+  <ExperienceCard
+      title="Tatami Server" desc="200人規模のイベントコミュニティの副代表兼開発者、インフラ担当"
+      period={new Period(new Month(2021, 4), new Month(2022, 7))}
+      isCurrent={false}
+  />
+  <ExperienceCard
+      title="One Server" desc="30人規模のクローズドなRPG開発コミュニティの副代表兼開発者、インフラ担当"
+      period={new Period(new Month(2021, 9), new Month(2024, 5))}
+      isCurrent={true}
+  />
+</Section>
