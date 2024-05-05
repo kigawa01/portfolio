@@ -1,0 +1,24 @@
+---
+import LabeledItem from "../LabeledItem.astro";
+import WideCard from "../section/WideCard.astro";
+interface Props {
+  title: string,
+  desc: string,
+  src: string,
+  artifact?: string
+}
+const {title, desc, artifact, src} = Astro.props
+---
+<WideCard title={title}>
+  <p>{desc}</p>
+  {artifact != undefined &&
+      <LabeledItem text="artifact"><a href={artifact} target="_blank">{artifact}</a></LabeledItem>
+  }
+  <LabeledItem text="sourcecode"><a href={src} target="_blank">{src}</a></LabeledItem>
+</WideCard>
+
+<style>
+  a {
+    text-decoration: underline
+  }
+</style>
