@@ -1,0 +1,15 @@
+---
+import {Period} from "../../script/period";
+import WideCard from "../section/WideCard.astro";
+interface Props {
+  period: Period,
+  title: string,
+  desc: string,
+  isCurrent: boolean
+}
+const {period, title, desc, isCurrent} = Astro.props
+---
+<WideCard title={title}>
+  <p>{desc}</p>
+  <p>{period.start.year}年{period.start.month}月 - {period.end.year}年{period.end.month}月{isCurrent ? "(現在)" : ""}</p>
+</WideCard>
