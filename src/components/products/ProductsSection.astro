@@ -1,0 +1,60 @@
+---
+import Section from "../section/Section.astro";
+import ProductCard from "./ProductCard.astro";
+---
+<Section title="products">
+  <ProductCard
+      title="kutil"
+      desc="kotlin multiplatformで書かれたユーティリティ。複数のプロジェクトで使いまわすコードをまとめている。"
+      src="https://github.com/kigawa01/kutil"
+      artifact="https://central.sonatype.com/artifact/net.kigawa.kutil/kutil"
+  />
+  <ProductCard
+      title="kunit"
+      desc="kotlin multiplatformで書かれたDIコンテナ。web以外の開発や制限の多い環境でも使用しやすいように設計している。"
+      src="https://github.com/kigawa01/kunit"
+      artifact="https://central.sonatype.com/artifact/net.kigawa.kutil/kutil-units"
+  />
+  <ProductCard
+      title="icha"
+      desc="画像ガチャを投稿できるサービス。ライセンスを設定できるようにするなどクリエイターに使いやすいよう設計している。"
+      src="https://github.com/kigawa01/icha"
+      artifact="https://icha.kigawa.net/"
+  />
+  <ProductCard
+      title="server-chat"
+      desc="MinecraftのBungeeCordを利用している際にサーバーごとにチャットを切り分けることができるプラグイン。"
+      src="https://github.com/kigawa-net/server-chat"
+  />
+  <ProductCard
+      title="score-store"
+      desc="Minecraftのscoreboardとぷら銀を連携して扱うためのプラグイン。"
+      src="https://github.com/oyucraft/scoreboard-store"
+  />
+  <ProductCard
+      title="mcsm"
+      desc="Minecraftのサーバーのワールドデータを管理するアプリケーション。"
+      src="https://github.com/kigawa01/mcsm"
+  />
+  <ProductCard
+      title="ChunkGenerater"
+      desc="Minecraftのチャンクをランダムに再生成するプラグイン。"
+      src="https://github.com/kigawa01/ChunkGenerater"
+  />
+  <ProductCard
+      title="ddns-client"
+      desc="CloudFlareを利用したDDNSのクライアント。"
+      src="https://github.com/kigawa01/ddns-client"
+  />
+  <ProductCard
+      title="discord-downloader"
+      desc="Discordに投稿されたファイルをダウンロードするアプリケーション。"
+      src="hhttps://github.com/kigawa01/discord-downloader"
+  />
+  <ProductCard
+      title="badge-collector"
+      desc="Discordで資格勉強の問題を出題できるボット。"
+      src="https://github.com/Code-Sakura/badge-collector"
+  />
+
+</Section>
