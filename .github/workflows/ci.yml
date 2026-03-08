@@ -1,6 +1,15 @@
-name: vitest
+name: CI
 
-on: [push]
+on:
+  workflow_call:
+  push:
+    branches:
+      - master
+      - develop
+  pull_request:
+    branches:
+      - master
+      - develop
 
 jobs:
   build:
