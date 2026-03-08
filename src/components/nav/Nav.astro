@@ -11,12 +11,32 @@ import LabeledItem from "../LabeledItem.astro";
       <NavButton title="experience"/>
       <NavButton title="products"/>
     </ul>
-    <footer>
+    <details class="footer-toggle mobile">
+      <summary>連絡先</summary>
+      <footer>
+        <LabeledItem text="twitter">
+          <a href="https://twitter.com/kigawa20" target="_blank">@kigawa20</a>
+        </LabeledItem>
+        <LabeledItem text="github">
+          <a href="https://github.com/kigawa01" target="_blank">kigawa01</a>
+        </LabeledItem>
+        <LabeledItem text="email">
+          <p>contact@kigawa.net</p>
+        </LabeledItem>
+        <LabeledItem text="sourcecode">
+          <a href="https://github.com/kigawa01/portfolio" target="_blank">https://github.com/kigawa01/portfolio</a>
+        </LabeledItem>
+      </footer>
+    </details>
+    <footer class="desktop">
       <LabeledItem text="twitter">
         <a href="https://twitter.com/kigawa20" target="_blank">@kigawa20</a>
       </LabeledItem>
       <LabeledItem text="github">
         <a href="https://github.com/kigawa01" target="_blank">kigawa01</a>
+      </LabeledItem>
+      <LabeledItem text="email">
+        <p>contact@kigawa.net</p>
       </LabeledItem>
       <LabeledItem text="sourcecode">
         <a href="https://github.com/kigawa01/portfolio" target="_blank">https://github.com/kigawa01/portfolio</a>
@@ -31,6 +51,7 @@ import LabeledItem from "../LabeledItem.astro";
     width: 500px;
     box-sizing: border-box;
     display: flex;
+    flex-shrink: 0;
   }
   nav {
     background-color: var(--mcolor-secondary-container);
@@ -49,5 +70,53 @@ import LabeledItem from "../LabeledItem.astro";
   }
   a {
     text-decoration: underline;
+  }
+  .footer-toggle > footer {
+    display: block;
+  }
+  .mobile {
+    display: none;
+  }
+  .desktop {}
+  @media (max-width: 1000px) {
+    .mobile {
+      display: block;
+    }
+    .desktop {
+      display: none;
+    }
+    .nav-wrapper {
+      height: auto;
+      width: 100%;
+      padding: 10px 10px 0 10px;
+    }
+    nav {
+      padding: 16px 20px;
+    }
+    h1 {
+      font-size: 1.2rem;
+    }
+    ul {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin: 12px 0 0 0;
+      font-size: 1rem;
+      flex: unset;
+    }
+    footer {
+      margin-top: 8px;
+      font-size: 0.85rem;
+    }
+    .footer-toggle {
+      margin-top: 12px;
+    }
+    .footer-toggle > summary {
+      display: list-item;
+      cursor: pointer;
+      font-size: 0.9rem;
+      padding: 4px 0;
+    }
   }
 </style>

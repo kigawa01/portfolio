@@ -9,7 +9,7 @@ import MainScroll from "./MainScroll.astro";
 <style>
   .main-wrapper {
     height: 100vh;
-    padding: 10px ;
+    padding: 10px;
     width: 500px;
     box-sizing: border-box;
     display: flex;
@@ -21,5 +21,14 @@ import MainScroll from "./MainScroll.astro";
     border-radius: 8px;
     border: 2px solid var(--mcolor-outline);
     padding: 0 10px;
+  }
+
+  @media (max-width: 1000px) {
+    .main-wrapper {
+      height: 0;
+      width: 100%;
+      flex: 1;
+      padding: 10px;
+    }
   }
 </style>
