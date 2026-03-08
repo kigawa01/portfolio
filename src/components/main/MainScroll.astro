@@ -1,11 +1,11 @@
 ---
-import ProfileSection from "../section/About.astro";
+import About from "../section/About.astro";
 import SkillSection from "../skill/Skill.astro";
 import ExperienceSection from "../experience/Experience.astro";
 import ProductsSection from "../products/ProductsSection.astro";
 ---
 <div class="scroll">
-  <ProfileSection/>
+  <About/>
   <SkillSection/>
   <ExperienceSection/>
   <ProductsSection/>
@@ -17,5 +17,6 @@ import ProductsSection from "../products/ProductsSection.astro";
     box-sizing: border-box;
     overflow: scroll;
     height: 100%;
+    scroll-behavior: smooth;
   }
 </style>

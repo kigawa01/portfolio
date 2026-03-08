@@ -11,7 +11,24 @@ import LabeledItem from "../LabeledItem.astro";
       <NavButton title="experience"/>
       <NavButton title="products"/>
     </ul>
-    <footer>
+    <details class="footer-toggle mobile">
+      <summary>連絡先</summary>
+      <footer>
+        <LabeledItem text="twitter">
+          <a href="https://twitter.com/kigawa20" target="_blank">@kigawa20</a>
+        </LabeledItem>
+        <LabeledItem text="github">
+          <a href="https://github.com/kigawa01" target="_blank">kigawa01</a>
+        </LabeledItem>
+        <LabeledItem text="email">
+          <p>contact@kigawa.net</p>
+        </LabeledItem>
+        <LabeledItem text="sourcecode">
+          <a href="https://github.com/kigawa01/portfolio" target="_blank">https://github.com/kigawa01/portfolio</a>
+        </LabeledItem>
+      </footer>
+    </details>
+    <footer class="desktop">
       <LabeledItem text="twitter">
         <a href="https://twitter.com/kigawa20" target="_blank">@kigawa20</a>
       </LabeledItem>
@@ -54,8 +71,20 @@ import LabeledItem from "../LabeledItem.astro";
   a {
     text-decoration: underline;
   }
-
-  @media (max-width: 768px) {
+  .footer-toggle > footer {
+    display: block;
+  }
+  .mobile {
+    display: none;
+  }
+  .desktop {}
+  @media (max-width: 1000px) {
+    .mobile {
+      display: block;
+    }
+    .desktop {
+      display: none;
+    }
     .nav-wrapper {
       height: auto;
       width: 100%;
@@ -77,7 +106,17 @@ import LabeledItem from "../LabeledItem.astro";
       flex: unset;
     }
     footer {
-      display: none;
+      margin-top: 8px;
+      font-size: 0.85rem;
+    }
+    .footer-toggle {
+      margin-top: 12px;
+    }
+    .footer-toggle > summary {
+      display: list-item;
+      cursor: pointer;
+      font-size: 0.9rem;
+      padding: 4px 0;
     }
   }
 </style>
