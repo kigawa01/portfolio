@@ -18,6 +18,9 @@ import LabeledItem from "../LabeledItem.astro";
       <LabeledItem text="github">
         <a href="https://github.com/kigawa01" target="_blank">kigawa01</a>
       </LabeledItem>
+      <LabeledItem text="email">
+        <p>contact@kigawa.net</p>
+      </LabeledItem>
       <LabeledItem text="sourcecode">
         <a href="https://github.com/kigawa01/portfolio" target="_blank">https://github.com/kigawa01/portfolio</a>
       </LabeledItem>
@@ -31,6 +34,7 @@ import LabeledItem from "../LabeledItem.astro";
     width: 500px;
     box-sizing: border-box;
     display: flex;
+    flex-shrink: 0;
   }
   nav {
     background-color: var(--mcolor-secondary-container);
@@ -49,5 +53,31 @@ import LabeledItem from "../LabeledItem.astro";
   }
   a {
     text-decoration: underline;
+  }
+
+  @media (max-width: 768px) {
+    .nav-wrapper {
+      height: auto;
+      width: 100%;
+      padding: 10px 10px 0 10px;
+    }
+    nav {
+      padding: 16px 20px;
+    }
+    h1 {
+      font-size: 1.2rem;
+    }
+    ul {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin: 12px 0 0 0;
+      font-size: 1rem;
+      flex: unset;
+    }
+    footer {
+      display: none;
+    }
   }
 </style>

@@ -11,5 +11,12 @@ import Main from "../components/main/Main.astro";
 <style>
   body {
     display: flex;
+    height: 100dvh;
+    overflow: hidden;
+  }
+  @media (max-width: 768px) {
+    body {
+      flex-direction: column;
+    }
   }
 </style>

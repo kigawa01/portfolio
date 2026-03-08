@@ -19,6 +19,7 @@ const {title} = Astro.props
     background: var(--mcolor-primary-container);
     color: var(--mcolor-on-primary-container);
     padding: 10px 20px;
+    display: block;
     &:hover {
       background: var(--mcolor-secondary);
       color: var(--mcolor-on-secondary);
@@ -26,5 +27,15 @@ const {title} = Astro.props
   }
   li {
     margin: 15px 0;
+  }
+
+  @media (max-width: 768px) {
+    li {
+      margin: 0;
+    }
+    a {
+      padding: 6px 14px;
+      width: auto;
+    }
   }
 </style>
