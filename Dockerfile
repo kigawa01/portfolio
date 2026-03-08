@@ -24,10 +24,9 @@ FROM nginx:alpine AS runner
 ENV SERVER_NAME _
 ENV PORT 80
 
-RUN echo "\
-    # キャッシュ用のディレクトリを作成\
-    mkdir -p /var/cache/nginx/client_temp;\
-    mkdir -p /var/cache/nginx/proxy_temp;\
+RUN mkdir -p /var/cache/nginx/client_temp \
+    && mkdir -p /var/cache/nginx/proxy_temp \
+    && echo "\
     \
     server {\
       listen ${PORT};\
