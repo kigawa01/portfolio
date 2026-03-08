@@ -16,6 +16,9 @@ const {title} = Astro.props
     width: 100%;
     box-sizing: border-box;
     padding: 30px;
+    @media (max-width: 599px) {
+      padding: 45px 8px;
+    }
     &:not(:first-child) {
       margin: 30px 0 0 0;
     }

@@ -21,6 +21,9 @@ import MainScroll from "./MainScroll.astro";
     border-radius: 8px;
     border: 2px solid var(--mcolor-outline);
     padding: 0 10px;
+    @media (max-width: 599px) {
+      padding: 0 2px;
+    }
   }
 
   @media (max-width: 1000px) {
@@ -29,6 +32,11 @@ import MainScroll from "./MainScroll.astro";
       width: 100%;
       flex: 1;
       padding: 10px;
+    }
+  }
+  @media (max-width: 599px) {
+    .main-wrapper {
+      padding: 10px 4px;
     }
   }
 </style>
