@@ -33,13 +33,13 @@ RUN echo "\
       listen ${PORT};\
       server_name ${SERVER_NAME};\
 \
-      # HTMLファイルのキャッシュ設定
-      location ~* \.html$ {
-        root /usr/share/nginx/html;
-        expires 1h;
-        add_header Cache-Control "public, max-age=3600";
-      }
-
+      # HTMLファイルのキャッシュ設定 \
+      location ~* \.html$ { \
+        root /usr/share/nginx/html; \
+        expires 1h; \
+        add_header Cache-Control "public, max-age=3600"; \
+      } \
+\
       # 静的アセットのキャッシュ設定\
       location ~* \\.(jpg|jpeg|png|gif|ico|svg|webp|avif)$ {\
         root /usr/share/nginx/html;\
