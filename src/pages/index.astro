@@ -11,8 +11,10 @@ import Main from "../components/main/Main.astro";
 <style>
   body {
     display: flex;
-    height: env(safe-area-inset-bottom);
+    height: 100dvh;
+    padding-bottom: env(safe-area-inset-bottom);
     overflow: hidden;
+    box-sizing: border-box;
   }
   @media (max-width: 1000px) {
     body {
