@@ -5,19 +5,20 @@ import Main from "../components/main/Main.astro";
 ---
 
 <Layout title="kigawa's portfolio">
-  <Nav/>
-  <Main/>
+  <div>
+    <Nav/>
+    <Main/>
+  </div>
 </Layout>
 <style>
-  body {
+  div {
     display: flex;
-    height: 100dvh;
     padding-bottom: env(safe-area-inset-bottom);
-    overflow: hidden;
+    max-height: 100dvh;
     box-sizing: border-box;
   }
   @media (max-width: 1000px) {
-    body {
+    div {
       flex-direction: column;
     }
   }
