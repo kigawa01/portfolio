@@ -13,8 +13,7 @@ import Main from "../components/main/Main.astro";
 <style>
   div {
     display: flex;
-    padding-bottom: env(safe-area-inset-bottom);
-    max-height: 100dvh;
+    max-height: calc(100dvh - env(safe-area-inset-bottom));
     box-sizing: border-box;
   }
   @media (max-width: 1000px) {
