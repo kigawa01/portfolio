@@ -12,6 +12,8 @@ jobs:
     needs: test
     runs-on: ubuntu-latest
     if: startsWith(github.head_ref,'renovate/')
+    permissions:
+      pull-requests: write
     steps:
       - name: Merge
         uses: devmasx/merge-branch@v1.4.0
