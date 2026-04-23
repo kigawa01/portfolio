@@ -1,8 +1,7 @@
 {
     "extends": [
-        "schedule:automergeDaily",
-        ":dependencyDashboard",
-        "config:recommended"
+        "config:recommended",
+        ":dependencyDashboard"
     ],
     "rebaseWhen": "behind-base-branch",
     "prConcurrentLimit": 0,
@@ -12,7 +11,7 @@
             "matchPackageNames": [
                 "com.android.tools.build:gradle"
             ],
-            "minimumReleaseAge": 365
+            "minimumReleaseAge": "365 days"
         }
     ]
 }
