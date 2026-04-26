@@ -1,7 +1,7 @@
 # ============================================
 # Builder Stage
 # ============================================
-FROM node:20-alpine AS builder
+FROM node:24-alpine AS builder
 WORKDIR /app
 
 # 1. まず package.json と package-lock.json のみをコピー
